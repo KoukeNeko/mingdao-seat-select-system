@@ -1,31 +1,21 @@
 import React from "react";
 
-
-
 export default function Seat(props) {
-    const [selected, setSelected] = React.useState(false);
-    const [selectedID, setSelectedID] = React.useState("");
-    const row = Math.floor((props.id - 1) / 8) + 1;
-    const column = 8 - ((props.id - 1) % 8);
 
     return (
         <>
             <div
                 onClick={() => {
-                    setSelectedID(props.clickFunction(props.id));
-                    // alert(`Seat ${row} ${column} is selected`)
-                    console.log(props.selectSeats);
-                    setSelected(!selected);
-                    
+                    if (props.seatArray.length < 5 || props.seatArray.includes(props.id)) 
+                        props.onClickFunction(props.id);                  
                 }}
                 className="seat"
                 style={{
-                    backgroundColor: selected ? "#ADFF87" : "#696969",
-                    pointerEvents: (selected ||!props.canClick) ? "none" : "auto",
-                }}
-                
+                    backgroundColor: props.isSelected  ? "#ADFF87" : "#696969",
+                    // pointerEvents: props.isSelected ? "none" : "auto",
+                }}    
             >
-                {selected && props.selectSeats >= 0 ? props.selectSeats : ""}
+                {props.seatArray.indexOf(props.id) >= 0 ?  props.seatArray.indexOf(props.id) + 1 : ""}
             </div>
         </>
     );

@@ -10,6 +10,7 @@ body {
   font-weight: 500;
   overflow: hidden;
   margin: 0;
+  user-select: none;
 }
 
 .board{
@@ -44,12 +45,14 @@ body {
   /* color: #696969; */
   text-align: center;
   line-height: 35px;
+  user-select: none;
 }
 
 .confirm{
   display: flex;
   background-color: #282828;
   position: fixed;
+  z-index: 10;
   height: 55px;
   width: 95%;
   max-width: 600px;
@@ -58,8 +61,8 @@ body {
   left: 0;
   right: 0;
   margin-bottom: 10px;
-  transition: all 0.5s ease-in-out;
-  bottom: -100px;
+  transition: all 0.3s ease-in-out;
+  /* bottom: 10px; */
   justify-content: space-between;
 }
 
@@ -71,6 +74,8 @@ body {
   font-size: 15px;
   padding: 6px 20px;
   border-radius: 5px;
+  margin: 5px;
+  
 }
 
 .confirm-btn:disabled{
@@ -85,6 +90,8 @@ body {
   font-size: 15px;
   padding: 6px 20px;
   border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 .btns{
