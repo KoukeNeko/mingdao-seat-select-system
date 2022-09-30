@@ -1,21 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
 
+import Seats from "./components/Seats";
+import NavBar from "./components/NavBar";
+import Board from "./components/Board";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h3>Welcome to React!</h3>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <NavBar />
+        <Board />
+        <Seats />
     </div>
   );
 }
